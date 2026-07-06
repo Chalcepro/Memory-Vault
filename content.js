@@ -87,7 +87,7 @@
     const fab = document.createElement('button');
     fab.id = FAB_ID;
     fab.className = 'dsv-fab';
-    fab.innerHTML = '<span>🧠</span><span class="notification-badge" id="dsv-notification-badge" style="display:none;"></span>';
+    fab.innerHTML = '<span> <img class="logo" src="/assets/bubble_logo.png" alt="Memory Vault Logo" /> </span><span class="notification-badge" id="dsv-notification-badge" style="display:none;"></span>';
     fab.title = 'Memory Vault';
     document.body.appendChild(fab);
 
@@ -97,14 +97,13 @@
     modal.innerHTML = `
       <div class="dsv-header">
         <h2>VAULT</h2>
-        <button class="dsv-close-btn" id="dsv-close" aria-label="Close">✕</button>
       </div>
 
       <div class="dsv-section dsv-capture-section">
         <div class="dsv-capture-title">IMPORT / SAVE</div>
         <div class="dsv-upload-area" id="dsv-upload-area">
-          📤 Import file
-          <input type="file" id="dsv-file-input" accept=".txt,.pdf,.docx,.json,.csv,.js,.py,.html,.css,.md">
+          Upload file
+          <input type="file" id="dsv-file-input" accept=".txt,.pdf,.docx,.json,.csv,.js,.py,.html,.css,.md,.zip,.html,.ts,.java,.c,.cpp,.rb,.go,.rs,.sh" />
         </div>
         <div class="dsv-manual-save">
           <input id="dsv-memory-title" placeholder="Title..." />
@@ -114,7 +113,7 @@
 
       <div class="dsv-section dsv-library-section">
         <div class="dsv-accordion-header" id="dsv-accordion-header">
-          <span class="dsv-accordion-title">MEMORY LIBRARY</span>
+          <span class="dsv-accordion-title">Memory</span>
           <span class="dsv-accordion-status" id="dsv-accordion-status">0 saved</span>
           <span class="dsv-accordion-icon" id="dsv-accordion-icon">▼</span>
         </div>
@@ -128,7 +127,6 @@
       <div class="dsv-actions">
         <button class="dsv-inject-btn" id="dsv-inject">INJECT</button>
         <button class="dsv-export-btn" id="dsv-export">EXPORT</button>
-        <button class="dsv-clear-btn" id="dsv-clear">CLEAR</button>
       </div>
     `;
     document.body.appendChild(modal);
@@ -496,19 +494,17 @@
     createUI();
 
     const fab = document.getElementById(FAB_ID);
-    const closeBtn = document.getElementById('dsv-close');
     const uploadArea = document.getElementById('dsv-upload-area');
     const fileInput = document.getElementById('dsv-file-input');
     const saveBtn = document.getElementById('dsv-save-current');
     const titleInput = document.getElementById('dsv-memory-title');
     const injectBtn = document.getElementById('dsv-inject');
     const exportBtn = document.getElementById('dsv-export');
-    const clearBtn = document.getElementById('dsv-clear');
+    // const clearBtn = document.getElementById('dsv-clear');
     const backdrop = document.getElementById(BACKDROP_ID);
     const accordionHeader = document.getElementById('dsv-accordion-header');
 
     fab.addEventListener('click', () => toggleModal(true));
-    closeBtn.addEventListener('click', () => toggleModal(false));
     backdrop.addEventListener('click', () => toggleModal(false));
     accordionHeader.addEventListener('click', toggleAccordion);
 

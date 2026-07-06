@@ -1,20 +1,20 @@
 /* ===== DeepSeek Memory Vault v4.0 - Compact Floating Modal ===== */
 :root {
   /* Primary Colors - DeepSeek Red */
-  --primary: #c41e3a;
-  --primary-light: #e53e3e;
-  --primary-dark: #9c1a32;
-  --primary-glow: rgba(196, 30, 58, 0.35);
+  --primary: #f74c4c;
+  --primary-light: #fb7b7b;
+  --primary-dark: #8d1313; 
+  --primary-glow: rgba(255, 255, 255, 0.35);
   
   /* Background Colors */
   --bg-dark: #0d0d0d;
-  --bg-panel: #1a1a1a;
+  --bg-panel: #151515;
   --bg-card: rgba(255, 255, 255, 0.02);
   --bg-card-hover: rgba(255, 255, 255, 0.04);
   
   /* Text Colors */
   --text-primary: #f8f8f8;
-  --text-secondary: #a8a8a8;
+  --text-secondary: #c3c3c3a0;
   --text-muted: #787878;
   
   /* Border Colors */
@@ -23,7 +23,7 @@
   
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, #c41e3a, #9c1a32);
-  --gradient-panel: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
+  --gradient-panel: linear-gradient(180deg, #1c0909 0%, #0d0d0d 100%);
   
   /* Shadows */
   --shadow-fab: 0 10px 25px var(--primary-glow);
@@ -78,6 +78,15 @@
   align-items: center;
   justify-content: center;
   outline: none;
+}
+
+.logo{
+  width: 100%;
+  height: 100%;
+  /* background-image: url(/assets/bubble_logo.png); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .dsv-fab:hover {
@@ -479,6 +488,7 @@
 }
 
 .dsv-actions button {
+  width: 100%;
   flex: 1;
   padding: 10px 6px;
   border: none;
@@ -595,9 +605,11 @@
     width: calc(100% - 24px);
     max-width: calc(100% - 24px);
   }
-  
+
   .dsv-header h2 {
-    font-size: 16px;
+    font-size: 18px;
+    letter-spacing: 30;
+    width: 100%;
   }
   
   .dsv-memory-item .title {
