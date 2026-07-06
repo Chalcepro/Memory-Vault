@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "DeepSeek Memory Vault",
+  "version": "3.0",
+  "description": "A Chrome extension that allows users to save and manage their chat history on DeepSeek.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://chat.deepseek.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://chat.deepseek.com/*"],
+      "js": ["content.js"],
+      "css": ["style.css"]
+    }
+  ]
+}
