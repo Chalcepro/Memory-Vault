@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Memory Vault",
+  "version": "4.1.0",
+  "description": "Persistent memory across any AI chat — DeepSeek, ChatGPT, Claude, Gemini, and more. Stream-safe auto-save, tag filtering, bridge detail panel.",
+  "permissions": ["storage", "clipboardWrite"],
+  "host_permissions": [
+    "https://chat.deepseek.com/*",
+    "https://chatgpt.com/*",
+    "https://chat.openai.com/*",
+    "https://claude.ai/*",
+    "https://gemini.google.com/*",
+    "https://grok.com/*",
+    "https://www.perplexity.ai/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.deepseek.com/*",
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://claude.ai/*",
+        "https://gemini.google.com/*",
+        "https://grok.com/*",
+        "https://www.perplexity.ai/*"
+      ],
+      "js": ["content.js"],
+      "css": ["style.css"]
+    }
+  ]
+}
